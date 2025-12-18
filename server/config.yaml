@@ -47,23 +47,40 @@ cors:
           allow-headers: content-type
           expose-headers: Content-Length, Access-Control-Allow-Origin, Access-Control-Allow-Headers, Content-Type
           allow-credentials: true
+# db-list:
+#     - type: ""
+#       alias-name: ""
+#       prefix: ""
+#       port: ""
+#       config: ""
+#       db-name: ""
+#       username: ""
+#       password: ""
+#       path: ""
+#       engine: ""
+#       log-mode: ""
+#       max-idle-conns: 10
+#       max-open-conns: 100
+#       singular: false
+#       log-zap: false
+#       disable: true
 db-list:
-    - type: ""
-      alias-name: ""
+    - type: mysql                 # 数据库类型
+      alias-name: teamgramDB      # 必须：给这个连接起个别名，Go代码中将用这个名字获取连接
       prefix: ""
-      port: ""
-      config: ""
-      db-name: ""
-      username: ""
-      password: ""
-      path: ""
+      port: "3306"                # TeamGram DB 的端口
+      config: charset=utf8mb4&parseTime=True&loc=Local
+      db-name: teamgram           # 必须：TeamGram 的数据库名称
+      username: gva          # 必须：您创建的 GVA 链接用户
+      password: a#M$V4W3XqTK#r68!f9
+      path: 43.128.80.11    # 必须：TeamGram DB 的 IP 地址
       engine: ""
-      log-mode: ""
+      log-mode: error             # 可以自定义日志级别
       max-idle-conns: 10
       max-open-conns: 100
       singular: false
       log-zap: false
-      disable: true
+      disable: false
 disk-list:
     - mount-point: /
 email:
@@ -150,23 +167,6 @@ mysql:
     max-open-conns: 100
     singular: false
     log-zap: false
-db-list:
-    - type: mysql                 # 数据库类型
-      alias-name: teamgramDB      # 必须：给这个连接起个别名，Go代码中将用这个名字获取连接
-      prefix: ""
-      port: "3306"                # TeamGram DB 的端口
-      config: charset=utf8mb4&parseTime=True&loc=Local
-      db-name: teamgram           # 必须：TeamGram 的数据库名称
-      username: gva          # 必须：您创建的 GVA 链接用户
-      password: a#M$V4W3XqTK#r68!f9
-      path: 43.128.80.11    # 必须：TeamGram DB 的 IP 地址
-      engine: ""
-      log-mode: error             # 可以自定义日志级别
-      max-idle-conns: 10
-      max-open-conns: 100
-      singular: false
-      log-zap: false
-      disable: false
 oracle:
     prefix: ""
     port: ""
