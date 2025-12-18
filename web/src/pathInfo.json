@@ -60,6 +60,8 @@
   "/src/view/superAdmin/params/sysParams.vue": "SysParams",
   "/src/view/superAdmin/user/user.vue": "User",
   "/src/view/system/state.vue": "State",
+  "/src/view/system/users/users.vue": "Users",
+  "/src/view/system/users/usersForm.vue": "UsersForm",
   "/src/view/systemTools/autoCode/component/fieldDialog.vue": "FieldDialog",
   "/src/view/systemTools/autoCode/component/previewCodeDialog.vue": "PreviewCodeDialog",
   "/src/view/systemTools/autoCode/index.vue": "AutoCode",
