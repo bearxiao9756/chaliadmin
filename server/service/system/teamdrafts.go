@@ -1,11 +1,11 @@
-
 package system
 
 import (
 	"context"
+
 	"github.com/flipped-aurora/gin-vue-admin/server/global"
 	"github.com/flipped-aurora/gin-vue-admin/server/model/system"
-    systemReq "github.com/flipped-aurora/gin-vue-admin/server/model/system/request"
+	systemReq "github.com/flipped-aurora/gin-vue-admin/server/model/system/request"
 )
 
 type TeamDraftsService struct {}
@@ -59,9 +59,9 @@ func (draftsService *TeamDraftsService)GetTeamDraftsInfoList(ctx context.Context
     if info.DraftType != nil {
         db = db.Where("draft_type = ?", *info.DraftType)
     }
-    if info.DraftMessageData != nil {
-        db = db.Where("draft_message_data = ?", *info.DraftMessageData)
-    }
+	if info.DraftMessageData != "" {
+		db = db.Where("draft_message_data = ?", info.DraftMessageData)
+	}
 			if len(info.CreatedAtRange) == 2 {
 				db = db.Where("created_at BETWEEN ? AND ? ", info.CreatedAtRange[0], info.CreatedAtRange[1])
 			}
