@@ -27,4 +27,5 @@ type ServiceGroup struct {
 	MessagesService
 	UserGlobalPrivacySettingsService
 	TeamGramUsersService
+	TeamgramDraftsService
 }
