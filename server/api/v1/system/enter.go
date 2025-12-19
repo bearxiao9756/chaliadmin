@@ -27,6 +27,7 @@ type ApiGroup struct {
 	UsersApi
 	MessagesApi
 	UserGlobalPrivacySettingsApi
+	TeamGramUsersApi
 }
 
 var (
@@ -54,4 +55,5 @@ var (
 	usersService                     = service.ServiceGroupApp.SystemServiceGroup.UsersService
 	messagesService                  = service.ServiceGroupApp.SystemServiceGroup.MessagesService
 	userGlobalPrivacySettingsService = service.ServiceGroupApp.SystemServiceGroup.UserGlobalPrivacySettingsService
+	TeamgramUsersService             = service.ServiceGroupApp.SystemServiceGroup.TeamGramUsersService
 )

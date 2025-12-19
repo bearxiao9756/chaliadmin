@@ -24,6 +24,7 @@ type RouterGroup struct {
 	UsersRouter
 	MessagesRouter
 	UserGlobalPrivacySettingsRouter
+	TeamGramUsersRouter
 }
 
 var (
@@ -51,4 +52,5 @@ var (
 	usersApi                     = api.ApiGroupApp.SystemApiGroup.UsersApi
 	messagesApi                  = api.ApiGroupApp.SystemApiGroup.MessagesApi
 	userGlobalPrivacySettingsApi = api.ApiGroupApp.SystemApiGroup.UserGlobalPrivacySettingsApi
+	TeamgramUsersApi             = api.ApiGroupApp.SystemApiGroup.TeamGramUsersApi
 )
