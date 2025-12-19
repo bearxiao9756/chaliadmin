@@ -34,87 +34,87 @@
         
             <el-table-column align="left" label="用户ID" prop="id" width="120" />
 
-            <el-table-column align="left" label="userType字段" prop="userType" width="120" />
+            <el-table-column align="left" label="用户类型" prop="userType" width="120" />
 
-            <el-table-column align="left" label="accessHash字段" prop="accessHash" width="120" />
+            <el-table-column align="left" label="accessHash" prop="accessHash" width="120" />
 
-            <el-table-column align="left" label="secretKey用户ID" prop="secretKeyId" width="120" />
+            <el-table-column align="left" label="secretKey" prop="secretKeyId" width="120" />
 
-            <el-table-column align="left" label="firstName字段" prop="firstName" width="120" />
+            <el-table-column align="left" label="姓名-姓名" prop="firstName" width="120" />
 
-            <el-table-column align="left" label="lastName字段" prop="lastName" width="120" />
+            <el-table-column align="left" label="姓名-姓" prop="lastName" width="120" />
 
-            <el-table-column align="left" label="username字段" prop="username" width="120" />
+            <el-table-column align="left" label="姓名-氏" prop="username" width="120" />
 
-            <el-table-column align="left" label="phone字段" prop="phone" width="120" />
+            <el-table-column align="left" label="手机" prop="phone" width="120" />
 
-            <el-table-column align="left" label="countryCode字段" prop="countryCode" width="120" />
+            <el-table-column align="left" label="国家编码" prop="countryCode" width="120" />
 
-            <el-table-column align="left" label="verified字段" prop="verified" width="120">
+            <el-table-column align="left" label="是否验证" prop="verified" width="120">
     <template #default="scope">{{ formatBoolean(scope.row.verified) }}</template>
 </el-table-column>
-            <el-table-column align="left" label="support字段" prop="support" width="120">
+            <el-table-column align="left" label="是否支持" prop="support" width="120">
     <template #default="scope">{{ formatBoolean(scope.row.support) }}</template>
 </el-table-column>
-            <el-table-column align="left" label="scam字段" prop="scam" width="120">
+            <el-table-column align="left" label="是否欺诈" prop="scam" width="120">
     <template #default="scope">{{ formatBoolean(scope.row.scam) }}</template>
 </el-table-column>
-            <el-table-column align="left" label="fake字段" prop="fake" width="120">
+            <el-table-column align="left" label="是否假冒" prop="fake" width="120">
     <template #default="scope">{{ formatBoolean(scope.row.fake) }}</template>
 </el-table-column>
-            <el-table-column align="left" label="premium字段" prop="premium" width="120">
+            <el-table-column align="left" label="是否特权" prop="premium" width="120">
     <template #default="scope">{{ formatBoolean(scope.row.premium) }}</template>
 </el-table-column>
-            <el-table-column align="left" label="premiumExpireDate字段" prop="premiumExpireDate" width="120" />
+            <el-table-column align="left" label="特权时间" prop="premiumExpireDate" width="120" />
 
-            <el-table-column align="left" label="about字段" prop="about" width="120" />
+            <el-table-column align="left" label="个人简介" prop="about" width="120" />
 
-            <el-table-column align="left" label="state字段" prop="state" width="120" />
+            <el-table-column align="left" label="用户状态" prop="state" width="120" />
 
-            <el-table-column align="left" label="isBot字段" prop="isBot" width="120">
+            <el-table-column align="left" label="是否机器人" prop="isBot" width="120">
     <template #default="scope">{{ formatBoolean(scope.row.isBot) }}</template>
 </el-table-column>
-            <el-table-column align="left" label="accountDaysTtl字段" prop="accountDaysTtl" width="120" />
+            <el-table-column align="left" label="自动删除时间" prop="accountDaysTtl" width="120" />
 
-            <el-table-column align="left" label="photo用户ID" prop="photoId" width="120" />
+            <el-table-column align="left" label="头像ID" prop="photoId" width="120" />
 
-            <el-table-column align="left" label="restricted字段" prop="restricted" width="120">
+            <el-table-column align="left" label="是否封禁" prop="restricted" width="120">
     <template #default="scope">{{ formatBoolean(scope.row.restricted) }}</template>
 </el-table-column>
-            <el-table-column align="left" label="restrictionReason字段" prop="restrictionReason" width="120" />
+            <el-table-column align="left" label="封禁原因" prop="restrictionReason" width="120" />
 
-            <el-table-column align="left" label="archiveAndMuteNewNoncontactPeers字段" prop="archiveAndMuteNewNoncontactPeers" width="120">
+            <el-table-column align="left" label="是否陌生人静音" prop="archiveAndMuteNewNoncontactPeers" width="120">
     <template #default="scope">{{ formatBoolean(scope.row.archiveAndMuteNewNoncontactPeers) }}</template>
 </el-table-column>
-            <el-table-column align="left" label="emojiStatusDocument用户ID" prop="emojiStatusDocumentId" width="120" />
+            <el-table-column align="left" label="表情文档ID" prop="emojiStatusDocumentId" width="120" />
 
-            <el-table-column align="left" label="emojiStatusUntil字段" prop="emojiStatusUntil" width="120" />
+            <el-table-column align="left" label="表情到期时间" prop="emojiStatusUntil" width="120" />
 
-            <el-table-column align="left" label="storiesMax用户ID" prop="storiesMaxId" width="120" />
+            <el-table-column align="left" label="最新的故事 ID" prop="storiesMaxId" width="120" />
 
-            <el-table-column align="left" label="color字段" prop="color" width="120" />
+            <el-table-column align="left" label="主颜色" prop="color" width="120" />
 
-            <el-table-column align="left" label="colorBackgroundEmoji用户ID" prop="colorBackgroundEmojiId" width="120" />
+            <el-table-column align="left" label="表情背景色ID" prop="colorBackgroundEmojiId" width="120" />
 
-            <el-table-column align="left" label="profileColor字段" prop="profileColor" width="120" />
+            <el-table-column align="left" label="个人页面主色" prop="profileColor" width="120" />
 
-            <el-table-column align="left" label="profileColorBackgroundEmoji用户ID" prop="profileColorBackgroundEmojiId" width="120" />
+            <el-table-column align="left" label="个人页面表情背景色ID" prop="profileColorBackgroundEmojiId" width="120" />
 
-            <el-table-column align="left" label="birthday字段" prop="birthday" width="120" />
+            <el-table-column align="left" label="生日" prop="birthday" width="120" />
 
-            <el-table-column align="left" label="personalChannel用户ID" prop="personalChannelId" width="120" />
+            <el-table-column align="left" label="个人频道ID" prop="personalChannelId" width="120" />
 
-            <el-table-column align="left" label="authorizationTtlDays字段" prop="authorizationTtlDays" width="120" />
+            <el-table-column align="left" label="Token有效期" prop="authorizationTtlDays" width="120" />
 
-            <el-table-column align="left" label="deleted字段" prop="deleted" width="120">
+            <el-table-column align="left" label="是否删除" prop="deleted" width="120">
     <template #default="scope">{{ formatBoolean(scope.row.deleted) }}</template>
 </el-table-column>
-            <el-table-column align="left" label="deleteReason字段" prop="deleteReason" width="120" />
+            <el-table-column align="left" label="删除原因" prop="deleteReason" width="120" />
 
-            <el-table-column align="left" label="createdAt字段" prop="createdAt" width="180">
+            <el-table-column align="left" label="创建时间" prop="createdAt" width="180">
    <template #default="scope">{{ formatDate(scope.row.createdAt) }}</template>
 </el-table-column>
-            <el-table-column align="left" label="updatedAt字段" prop="updatedAt" width="180">
+            <el-table-column align="left" label="更新时间" prop="updatedAt" width="180">
    <template #default="scope">{{ formatDate(scope.row.updatedAt) }}</template>
 </el-table-column>
         <el-table-column align="left" label="操作" fixed="right" :min-width="appStore.operateMinWith">
@@ -152,112 +152,112 @@
             <el-form-item label="用户ID:" prop="id">
     <el-input v-model.number="formData.id" :clearable="true" placeholder="请输入用户ID" />
 </el-form-item>
-            <el-form-item label="userType字段:" prop="userType">
-    <el-input v-model.number="formData.userType" :clearable="true" placeholder="请输入userType字段" />
+            <el-form-item label="用户类型:" prop="userType">
+    <el-input v-model.number="formData.userType" :clearable="true" placeholder="请输入用户类型" />
 </el-form-item>
-            <el-form-item label="accessHash字段:" prop="accessHash">
-    <el-input v-model.number="formData.accessHash" :clearable="true" placeholder="请输入accessHash字段" />
+            <el-form-item label="accessHash:" prop="accessHash">
+    <el-input v-model.number="formData.accessHash" :clearable="true" placeholder="请输入accessHash" />
 </el-form-item>
-            <el-form-item label="secretKey用户ID:" prop="secretKeyId">
-    <el-input v-model.number="formData.secretKeyId" :clearable="true" placeholder="请输入secretKey用户ID" />
+            <el-form-item label="secretKey:" prop="secretKeyId">
+    <el-input v-model.number="formData.secretKeyId" :clearable="true" placeholder="请输入secretKey" />
 </el-form-item>
-            <el-form-item label="firstName字段:" prop="firstName">
-    <el-input v-model="formData.firstName" :clearable="true" placeholder="请输入firstName字段" />
+            <el-form-item label="姓名-姓名:" prop="firstName">
+    <el-input v-model="formData.firstName" :clearable="true" placeholder="请输入姓名-姓名" />
 </el-form-item>
-            <el-form-item label="lastName字段:" prop="lastName">
-    <el-input v-model="formData.lastName" :clearable="true" placeholder="请输入lastName字段" />
+            <el-form-item label="姓名-姓:" prop="lastName">
+    <el-input v-model="formData.lastName" :clearable="true" placeholder="请输入姓名-姓" />
 </el-form-item>
-            <el-form-item label="username字段:" prop="username">
-    <el-input v-model="formData.username" :clearable="true" placeholder="请输入username字段" />
+            <el-form-item label="姓名-氏:" prop="username">
+    <el-input v-model="formData.username" :clearable="true" placeholder="请输入姓名-氏" />
 </el-form-item>
-            <el-form-item label="phone字段:" prop="phone">
-    <el-input v-model="formData.phone" :clearable="true" placeholder="请输入phone字段" />
+            <el-form-item label="手机:" prop="phone">
+    <el-input v-model="formData.phone" :clearable="true" placeholder="请输入手机" />
 </el-form-item>
-            <el-form-item label="countryCode字段:" prop="countryCode">
-    <el-input v-model="formData.countryCode" :clearable="true" placeholder="请输入countryCode字段" />
+            <el-form-item label="国家编码:" prop="countryCode">
+    <el-input v-model="formData.countryCode" :clearable="true" placeholder="请输入国家编码" />
 </el-form-item>
-            <el-form-item label="verified字段:" prop="verified">
+            <el-form-item label="是否验证:" prop="verified">
     <el-switch v-model="formData.verified" active-color="#13ce66" inactive-color="#ff4949" active-text="是" inactive-text="否" clearable ></el-switch>
 </el-form-item>
-            <el-form-item label="support字段:" prop="support">
+            <el-form-item label="是否支持:" prop="support">
     <el-switch v-model="formData.support" active-color="#13ce66" inactive-color="#ff4949" active-text="是" inactive-text="否" clearable ></el-switch>
 </el-form-item>
-            <el-form-item label="scam字段:" prop="scam">
+            <el-form-item label="是否欺诈:" prop="scam">
     <el-switch v-model="formData.scam" active-color="#13ce66" inactive-color="#ff4949" active-text="是" inactive-text="否" clearable ></el-switch>
 </el-form-item>
-            <el-form-item label="fake字段:" prop="fake">
+            <el-form-item label="是否假冒:" prop="fake">
     <el-switch v-model="formData.fake" active-color="#13ce66" inactive-color="#ff4949" active-text="是" inactive-text="否" clearable ></el-switch>
 </el-form-item>
-            <el-form-item label="premium字段:" prop="premium">
+            <el-form-item label="是否特权:" prop="premium">
     <el-switch v-model="formData.premium" active-color="#13ce66" inactive-color="#ff4949" active-text="是" inactive-text="否" clearable ></el-switch>
 </el-form-item>
-            <el-form-item label="premiumExpireDate字段:" prop="premiumExpireDate">
-    <el-input v-model.number="formData.premiumExpireDate" :clearable="true" placeholder="请输入premiumExpireDate字段" />
+            <el-form-item label="特权时间:" prop="premiumExpireDate">
+    <el-input v-model.number="formData.premiumExpireDate" :clearable="true" placeholder="请输入特权时间" />
 </el-form-item>
-            <el-form-item label="about字段:" prop="about">
-    <el-input v-model="formData.about" :clearable="true" placeholder="请输入about字段" />
+            <el-form-item label="个人简介:" prop="about">
+    <el-input v-model="formData.about" :clearable="true" placeholder="请输入个人简介" />
 </el-form-item>
-            <el-form-item label="state字段:" prop="state">
-    <el-input v-model.number="formData.state" :clearable="true" placeholder="请输入state字段" />
+            <el-form-item label="用户状态:" prop="state">
+    <el-input v-model.number="formData.state" :clearable="true" placeholder="请输入用户状态" />
 </el-form-item>
-            <el-form-item label="isBot字段:" prop="isBot">
+            <el-form-item label="是否机器人:" prop="isBot">
     <el-switch v-model="formData.isBot" active-color="#13ce66" inactive-color="#ff4949" active-text="是" inactive-text="否" clearable ></el-switch>
 </el-form-item>
-            <el-form-item label="accountDaysTtl字段:" prop="accountDaysTtl">
-    <el-input v-model.number="formData.accountDaysTtl" :clearable="true" placeholder="请输入accountDaysTtl字段" />
+            <el-form-item label="自动删除时间:" prop="accountDaysTtl">
+    <el-input v-model.number="formData.accountDaysTtl" :clearable="true" placeholder="请输入自动删除时间" />
 </el-form-item>
-            <el-form-item label="photo用户ID:" prop="photoId">
-    <el-input v-model.number="formData.photoId" :clearable="true" placeholder="请输入photo用户ID" />
+            <el-form-item label="头像ID:" prop="photoId">
+    <el-input v-model.number="formData.photoId" :clearable="true" placeholder="请输入头像ID" />
 </el-form-item>
-            <el-form-item label="restricted字段:" prop="restricted">
+            <el-form-item label="是否封禁:" prop="restricted">
     <el-switch v-model="formData.restricted" active-color="#13ce66" inactive-color="#ff4949" active-text="是" inactive-text="否" clearable ></el-switch>
 </el-form-item>
-            <el-form-item label="restrictionReason字段:" prop="restrictionReason">
-    <el-input v-model="formData.restrictionReason" :clearable="true" placeholder="请输入restrictionReason字段" />
+            <el-form-item label="封禁原因:" prop="restrictionReason">
+    <el-input v-model="formData.restrictionReason" :clearable="true" placeholder="请输入封禁原因" />
 </el-form-item>
-            <el-form-item label="archiveAndMuteNewNoncontactPeers字段:" prop="archiveAndMuteNewNoncontactPeers">
+            <el-form-item label="是否陌生人静音:" prop="archiveAndMuteNewNoncontactPeers">
     <el-switch v-model="formData.archiveAndMuteNewNoncontactPeers" active-color="#13ce66" inactive-color="#ff4949" active-text="是" inactive-text="否" clearable ></el-switch>
 </el-form-item>
-            <el-form-item label="emojiStatusDocument用户ID:" prop="emojiStatusDocumentId">
-    <el-input v-model.number="formData.emojiStatusDocumentId" :clearable="true" placeholder="请输入emojiStatusDocument用户ID" />
+            <el-form-item label="表情文档ID:" prop="emojiStatusDocumentId">
+    <el-input v-model.number="formData.emojiStatusDocumentId" :clearable="true" placeholder="请输入表情文档ID" />
 </el-form-item>
-            <el-form-item label="emojiStatusUntil字段:" prop="emojiStatusUntil">
-    <el-input v-model.number="formData.emojiStatusUntil" :clearable="true" placeholder="请输入emojiStatusUntil字段" />
+            <el-form-item label="表情到期时间:" prop="emojiStatusUntil">
+    <el-input v-model.number="formData.emojiStatusUntil" :clearable="true" placeholder="请输入表情到期时间" />
 </el-form-item>
-            <el-form-item label="storiesMax用户ID:" prop="storiesMaxId">
-    <el-input v-model.number="formData.storiesMaxId" :clearable="true" placeholder="请输入storiesMax用户ID" />
+            <el-form-item label="最新的故事 ID:" prop="storiesMaxId">
+    <el-input v-model.number="formData.storiesMaxId" :clearable="true" placeholder="请输入最新的故事 ID" />
 </el-form-item>
-            <el-form-item label="color字段:" prop="color">
-    <el-input v-model.number="formData.color" :clearable="true" placeholder="请输入color字段" />
+            <el-form-item label="主颜色:" prop="color">
+    <el-input v-model.number="formData.color" :clearable="true" placeholder="请输入主颜色" />
 </el-form-item>
-            <el-form-item label="colorBackgroundEmoji用户ID:" prop="colorBackgroundEmojiId">
-    <el-input v-model.number="formData.colorBackgroundEmojiId" :clearable="true" placeholder="请输入colorBackgroundEmoji用户ID" />
+            <el-form-item label="表情背景色ID:" prop="colorBackgroundEmojiId">
+    <el-input v-model.number="formData.colorBackgroundEmojiId" :clearable="true" placeholder="请输入表情背景色ID" />
 </el-form-item>
-            <el-form-item label="profileColor字段:" prop="profileColor">
-    <el-input v-model.number="formData.profileColor" :clearable="true" placeholder="请输入profileColor字段" />
+            <el-form-item label="个人页面主色:" prop="profileColor">
+    <el-input v-model.number="formData.profileColor" :clearable="true" placeholder="请输入个人页面主色" />
 </el-form-item>
-            <el-form-item label="profileColorBackgroundEmoji用户ID:" prop="profileColorBackgroundEmojiId">
-    <el-input v-model.number="formData.profileColorBackgroundEmojiId" :clearable="true" placeholder="请输入profileColorBackgroundEmoji用户ID" />
+            <el-form-item label="个人页面表情背景色ID:" prop="profileColorBackgroundEmojiId">
+    <el-input v-model.number="formData.profileColorBackgroundEmojiId" :clearable="true" placeholder="请输入个人页面表情背景色ID" />
 </el-form-item>
-            <el-form-item label="birthday字段:" prop="birthday">
-    <el-input v-model="formData.birthday" :clearable="true" placeholder="请输入birthday字段" />
+            <el-form-item label="生日:" prop="birthday">
+    <el-input v-model="formData.birthday" :clearable="true" placeholder="请输入生日" />
 </el-form-item>
-            <el-form-item label="personalChannel用户ID:" prop="personalChannelId">
-    <el-input v-model.number="formData.personalChannelId" :clearable="true" placeholder="请输入personalChannel用户ID" />
+            <el-form-item label="个人频道ID:" prop="personalChannelId">
+    <el-input v-model.number="formData.personalChannelId" :clearable="true" placeholder="请输入个人频道ID" />
 </el-form-item>
-            <el-form-item label="authorizationTtlDays字段:" prop="authorizationTtlDays">
-    <el-input v-model.number="formData.authorizationTtlDays" :clearable="true" placeholder="请输入authorizationTtlDays字段" />
+            <el-form-item label="Token有效期:" prop="authorizationTtlDays">
+    <el-input v-model.number="formData.authorizationTtlDays" :clearable="true" placeholder="请输入Token有效期" />
 </el-form-item>
-            <el-form-item label="deleted字段:" prop="deleted">
+            <el-form-item label="是否删除:" prop="deleted">
     <el-switch v-model="formData.deleted" active-color="#13ce66" inactive-color="#ff4949" active-text="是" inactive-text="否" clearable ></el-switch>
 </el-form-item>
-            <el-form-item label="deleteReason字段:" prop="deleteReason">
-    <el-input v-model="formData.deleteReason" :clearable="true" placeholder="请输入deleteReason字段" />
+            <el-form-item label="删除原因:" prop="deleteReason">
+    <el-input v-model="formData.deleteReason" :clearable="true" placeholder="请输入删除原因" />
 </el-form-item>
-            <el-form-item label="createdAt字段:" prop="createdAt">
+            <el-form-item label="创建时间:" prop="createdAt">
     <el-date-picker v-model="formData.createdAt" type="date" style="width:100%" placeholder="选择日期" :clearable="true" />
 </el-form-item>
-            <el-form-item label="updatedAt字段:" prop="updatedAt">
+            <el-form-item label="更新时间:" prop="updatedAt">
     <el-date-picker v-model="formData.updatedAt" type="date" style="width:100%" placeholder="选择日期" :clearable="true" />
 </el-form-item>
           </el-form>
@@ -268,112 +268,112 @@
                     <el-descriptions-item label="用户ID">
     {{ detailForm.id }}
 </el-descriptions-item>
-                    <el-descriptions-item label="userType字段">
+                    <el-descriptions-item label="用户类型">
     {{ detailForm.userType }}
 </el-descriptions-item>
-                    <el-descriptions-item label="accessHash字段">
+                    <el-descriptions-item label="accessHash">
     {{ detailForm.accessHash }}
 </el-descriptions-item>
-                    <el-descriptions-item label="secretKey用户ID">
+                    <el-descriptions-item label="secretKey">
     {{ detailForm.secretKeyId }}
 </el-descriptions-item>
-                    <el-descriptions-item label="firstName字段">
+                    <el-descriptions-item label="姓名-姓名">
     {{ detailForm.firstName }}
 </el-descriptions-item>
-                    <el-descriptions-item label="lastName字段">
+                    <el-descriptions-item label="姓名-姓">
     {{ detailForm.lastName }}
 </el-descriptions-item>
-                    <el-descriptions-item label="username字段">
+                    <el-descriptions-item label="姓名-氏">
     {{ detailForm.username }}
 </el-descriptions-item>
-                    <el-descriptions-item label="phone字段">
+                    <el-descriptions-item label="手机">
     {{ detailForm.phone }}
 </el-descriptions-item>
-                    <el-descriptions-item label="countryCode字段">
+                    <el-descriptions-item label="国家编码">
     {{ detailForm.countryCode }}
 </el-descriptions-item>
-                    <el-descriptions-item label="verified字段">
+                    <el-descriptions-item label="是否验证">
     {{ detailForm.verified }}
 </el-descriptions-item>
-                    <el-descriptions-item label="support字段">
+                    <el-descriptions-item label="是否支持">
     {{ detailForm.support }}
 </el-descriptions-item>
-                    <el-descriptions-item label="scam字段">
+                    <el-descriptions-item label="是否欺诈">
     {{ detailForm.scam }}
 </el-descriptions-item>
-                    <el-descriptions-item label="fake字段">
+                    <el-descriptions-item label="是否假冒">
     {{ detailForm.fake }}
 </el-descriptions-item>
-                    <el-descriptions-item label="premium字段">
+                    <el-descriptions-item label="是否特权">
     {{ detailForm.premium }}
 </el-descriptions-item>
-                    <el-descriptions-item label="premiumExpireDate字段">
+                    <el-descriptions-item label="特权时间">
     {{ detailForm.premiumExpireDate }}
 </el-descriptions-item>
-                    <el-descriptions-item label="about字段">
+                    <el-descriptions-item label="个人简介">
     {{ detailForm.about }}
 </el-descriptions-item>
-                    <el-descriptions-item label="state字段">
+                    <el-descriptions-item label="用户状态">
     {{ detailForm.state }}
 </el-descriptions-item>
-                    <el-descriptions-item label="isBot字段">
+                    <el-descriptions-item label="是否机器人">
     {{ detailForm.isBot }}
 </el-descriptions-item>
-                    <el-descriptions-item label="accountDaysTtl字段">
+                    <el-descriptions-item label="自动删除时间">
     {{ detailForm.accountDaysTtl }}
 </el-descriptions-item>
-                    <el-descriptions-item label="photo用户ID">
+                    <el-descriptions-item label="头像ID">
     {{ detailForm.photoId }}
 </el-descriptions-item>
-                    <el-descriptions-item label="restricted字段">
+                    <el-descriptions-item label="是否封禁">
     {{ detailForm.restricted }}
 </el-descriptions-item>
-                    <el-descriptions-item label="restrictionReason字段">
+                    <el-descriptions-item label="封禁原因">
     {{ detailForm.restrictionReason }}
 </el-descriptions-item>
-                    <el-descriptions-item label="archiveAndMuteNewNoncontactPeers字段">
+                    <el-descriptions-item label="是否陌生人静音">
     {{ detailForm.archiveAndMuteNewNoncontactPeers }}
 </el-descriptions-item>
-                    <el-descriptions-item label="emojiStatusDocument用户ID">
+                    <el-descriptions-item label="表情文档ID">
     {{ detailForm.emojiStatusDocumentId }}
 </el-descriptions-item>
-                    <el-descriptions-item label="emojiStatusUntil字段">
+                    <el-descriptions-item label="表情到期时间">
     {{ detailForm.emojiStatusUntil }}
 </el-descriptions-item>
-                    <el-descriptions-item label="storiesMax用户ID">
+                    <el-descriptions-item label="最新的故事 ID">
     {{ detailForm.storiesMaxId }}
 </el-descriptions-item>
-                    <el-descriptions-item label="color字段">
+                    <el-descriptions-item label="主颜色">
     {{ detailForm.color }}
 </el-descriptions-item>
-                    <el-descriptions-item label="colorBackgroundEmoji用户ID">
+                    <el-descriptions-item label="表情背景色ID">
     {{ detailForm.colorBackgroundEmojiId }}
 </el-descriptions-item>
-                    <el-descriptions-item label="profileColor字段">
+                    <el-descriptions-item label="个人页面主色">
     {{ detailForm.profileColor }}
 </el-descriptions-item>
-                    <el-descriptions-item label="profileColorBackgroundEmoji用户ID">
+                    <el-descriptions-item label="个人页面表情背景色ID">
     {{ detailForm.profileColorBackgroundEmojiId }}
 </el-descriptions-item>
-                    <el-descriptions-item label="birthday字段">
+                    <el-descriptions-item label="生日">
     {{ detailForm.birthday }}
 </el-descriptions-item>
-                    <el-descriptions-item label="personalChannel用户ID">
+                    <el-descriptions-item label="个人频道ID">
     {{ detailForm.personalChannelId }}
 </el-descriptions-item>
-                    <el-descriptions-item label="authorizationTtlDays字段">
+                    <el-descriptions-item label="Token有效期">
     {{ detailForm.authorizationTtlDays }}
 </el-descriptions-item>
-                    <el-descriptions-item label="deleted字段">
+                    <el-descriptions-item label="是否删除">
     {{ detailForm.deleted }}
 </el-descriptions-item>
-                    <el-descriptions-item label="deleteReason字段">
+                    <el-descriptions-item label="删除原因">
     {{ detailForm.deleteReason }}
 </el-descriptions-item>
-                    <el-descriptions-item label="createdAt字段">
+                    <el-descriptions-item label="创建时间">
     {{ detailForm.createdAt }}
 </el-descriptions-item>
-                    <el-descriptions-item label="updatedAt字段">
+                    <el-descriptions-item label="更新时间">
     {{ detailForm.updatedAt }}
 </el-descriptions-item>
             </el-descriptions>
