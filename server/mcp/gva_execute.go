@@ -176,7 +176,7 @@ func (g *GVAExecutor) New() mcp.Tool {
 8. 搜索类型支持：=,!=,>,>=,<,<=,NOT BETWEEN/LIKE/BETWEEN/IN/NOT IN
 9. gvaModel=true时自动包含ID,CreatedAt,UpdatedAt,DeletedAt字段
 10. **重要**：当gvaModel=false时，必须有一个字段的primaryKey=true，否则会导致PrimaryField为nil错误
-11. **重要**：当gvaModel=true时，系统会自动设置ID字段为主键，无需手动设置primaryKey=true
+11. **重要**：当gvaModel=true时，系统会自动设置用户ID为主键，无需手动设置primaryKey=true
 12. 智能字典创建功能：当字段使用字典类型(DictType)时，系统会：
    - 自动检查字典是否存在，如果不存在则创建字典
    - 根据字典类型和字段描述智能生成默认选项，支持状态、性别、类型、等级、优先级、审批、角色、布尔值、订单、颜色、尺寸等常见场景

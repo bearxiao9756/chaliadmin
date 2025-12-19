@@ -3,8 +3,8 @@
   <div>
     <div class="gva-form-box">
       <el-form :model="formData" ref="elFormRef" label-position="right" :rules="rule" label-width="80px">
-        <el-form-item label="id字段:" prop="id">
-    <el-input v-model.number="formData.id" :clearable="true" placeholder="请输入id字段" />
+        <el-form-item label="用户ID:" prop="id">
+    <el-input v-model.number="formData.id" :clearable="true" placeholder="请输入用户ID" />
 </el-form-item>
         <el-form-item label="userType字段:" prop="userType">
     <el-input v-model.number="formData.userType" :clearable="true" placeholder="请输入userType字段" />
@@ -12,8 +12,8 @@
         <el-form-item label="accessHash字段:" prop="accessHash">
     <el-input v-model.number="formData.accessHash" :clearable="true" placeholder="请输入accessHash字段" />
 </el-form-item>
-        <el-form-item label="secretKeyId字段:" prop="secretKeyId">
-    <el-input v-model.number="formData.secretKeyId" :clearable="true" placeholder="请输入secretKeyId字段" />
+        <el-form-item label="secretKey用户ID:" prop="secretKeyId">
+    <el-input v-model.number="formData.secretKeyId" :clearable="true" placeholder="请输入secretKey用户ID" />
 </el-form-item>
         <el-form-item label="firstName字段:" prop="firstName">
     <el-input v-model="formData.firstName" :clearable="true" placeholder="请输入firstName字段" />
@@ -60,8 +60,8 @@
         <el-form-item label="accountDaysTtl字段:" prop="accountDaysTtl">
     <el-input v-model.number="formData.accountDaysTtl" :clearable="true" placeholder="请输入accountDaysTtl字段" />
 </el-form-item>
-        <el-form-item label="photoId字段:" prop="photoId">
-    <el-input v-model.number="formData.photoId" :clearable="true" placeholder="请输入photoId字段" />
+        <el-form-item label="photo用户ID:" prop="photoId">
+    <el-input v-model.number="formData.photoId" :clearable="true" placeholder="请输入photo用户ID" />
 </el-form-item>
         <el-form-item label="restricted字段:" prop="restricted">
     <el-switch v-model="formData.restricted" active-color="#13ce66" inactive-color="#ff4949" active-text="是" inactive-text="否" clearable ></el-switch>
@@ -72,32 +72,32 @@
         <el-form-item label="archiveAndMuteNewNoncontactPeers字段:" prop="archiveAndMuteNewNoncontactPeers">
     <el-switch v-model="formData.archiveAndMuteNewNoncontactPeers" active-color="#13ce66" inactive-color="#ff4949" active-text="是" inactive-text="否" clearable ></el-switch>
 </el-form-item>
-        <el-form-item label="emojiStatusDocumentId字段:" prop="emojiStatusDocumentId">
-    <el-input v-model.number="formData.emojiStatusDocumentId" :clearable="true" placeholder="请输入emojiStatusDocumentId字段" />
+        <el-form-item label="emojiStatusDocument用户ID:" prop="emojiStatusDocumentId">
+    <el-input v-model.number="formData.emojiStatusDocumentId" :clearable="true" placeholder="请输入emojiStatusDocument用户ID" />
 </el-form-item>
         <el-form-item label="emojiStatusUntil字段:" prop="emojiStatusUntil">
     <el-input v-model.number="formData.emojiStatusUntil" :clearable="true" placeholder="请输入emojiStatusUntil字段" />
 </el-form-item>
-        <el-form-item label="storiesMaxId字段:" prop="storiesMaxId">
-    <el-input v-model.number="formData.storiesMaxId" :clearable="true" placeholder="请输入storiesMaxId字段" />
+        <el-form-item label="storiesMax用户ID:" prop="storiesMaxId">
+    <el-input v-model.number="formData.storiesMaxId" :clearable="true" placeholder="请输入storiesMax用户ID" />
 </el-form-item>
         <el-form-item label="color字段:" prop="color">
     <el-input v-model.number="formData.color" :clearable="true" placeholder="请输入color字段" />
 </el-form-item>
-        <el-form-item label="colorBackgroundEmojiId字段:" prop="colorBackgroundEmojiId">
-    <el-input v-model.number="formData.colorBackgroundEmojiId" :clearable="true" placeholder="请输入colorBackgroundEmojiId字段" />
+        <el-form-item label="colorBackgroundEmoji用户ID:" prop="colorBackgroundEmojiId">
+    <el-input v-model.number="formData.colorBackgroundEmojiId" :clearable="true" placeholder="请输入colorBackgroundEmoji用户ID" />
 </el-form-item>
         <el-form-item label="profileColor字段:" prop="profileColor">
     <el-input v-model.number="formData.profileColor" :clearable="true" placeholder="请输入profileColor字段" />
 </el-form-item>
-        <el-form-item label="profileColorBackgroundEmojiId字段:" prop="profileColorBackgroundEmojiId">
-    <el-input v-model.number="formData.profileColorBackgroundEmojiId" :clearable="true" placeholder="请输入profileColorBackgroundEmojiId字段" />
+        <el-form-item label="profileColorBackgroundEmoji用户ID:" prop="profileColorBackgroundEmojiId">
+    <el-input v-model.number="formData.profileColorBackgroundEmojiId" :clearable="true" placeholder="请输入profileColorBackgroundEmoji用户ID" />
 </el-form-item>
         <el-form-item label="birthday字段:" prop="birthday">
     <el-input v-model="formData.birthday" :clearable="true" placeholder="请输入birthday字段" />
 </el-form-item>
-        <el-form-item label="personalChannelId字段:" prop="personalChannelId">
-    <el-input v-model.number="formData.personalChannelId" :clearable="true" placeholder="请输入personalChannelId字段" />
+        <el-form-item label="personalChannel用户ID:" prop="personalChannelId">
+    <el-input v-model.number="formData.personalChannelId" :clearable="true" placeholder="请输入personalChannel用户ID" />
 </el-form-item>
         <el-form-item label="authorizationTtlDays字段:" prop="authorizationTtlDays">
     <el-input v-model.number="formData.authorizationTtlDays" :clearable="true" placeholder="请输入authorizationTtlDays字段" />
