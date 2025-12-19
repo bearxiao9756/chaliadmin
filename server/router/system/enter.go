@@ -22,6 +22,7 @@ type RouterGroup struct {
 	SysVersionRouter
 	SysErrorRouter
 	UsersRouter
+	MessagesRouter
 }
 
 var (
@@ -47,4 +48,5 @@ var (
 	sysVersionApi       = api.ApiGroupApp.SystemApiGroup.SysVersionApi
 	sysErrorApi         = api.ApiGroupApp.SystemApiGroup.SysErrorApi
 	usersApi            = api.ApiGroupApp.SystemApiGroup.UsersApi
+	messagesApi         = api.ApiGroupApp.SystemApiGroup.MessagesApi
 )

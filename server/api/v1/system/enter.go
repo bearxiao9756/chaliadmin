@@ -25,6 +25,7 @@ type ApiGroup struct {
 	SysVersionApi
 	SysErrorApi
 	UsersApi
+	MessagesApi
 }
 
 var (
@@ -50,4 +51,5 @@ var (
 	sysVersionService       = service.ServiceGroupApp.SystemServiceGroup.SysVersionService
 	sysErrorService         = service.ServiceGroupApp.SystemServiceGroup.SysErrorService
 	usersService            = service.ServiceGroupApp.SystemServiceGroup.UsersService
+	messagesService         = service.ServiceGroupApp.SystemServiceGroup.MessagesService
 )
