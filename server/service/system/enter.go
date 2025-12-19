@@ -28,4 +28,6 @@ type ServiceGroup struct {
 	UserGlobalPrivacySettingsService
 	TeamGramUsersService
 	TeamDraftsService
+	TeamChaliBotsService
+	TeamChaliBotCommandsService
 }

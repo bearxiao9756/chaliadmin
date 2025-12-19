@@ -26,6 +26,8 @@ type RouterGroup struct {
 	UserGlobalPrivacySettingsRouter
 	TeamGramUsersRouter
 	TeamDraftsRouter
+	TeamChaliBotsRouter
+	TeamChaliBotCommandsRouter
 }
 
 var (
@@ -55,4 +57,6 @@ var (
 	userGlobalPrivacySettingsApi = api.ApiGroupApp.SystemApiGroup.UserGlobalPrivacySettingsApi
 	TeamgramUsersApi             = api.ApiGroupApp.SystemApiGroup.TeamGramUsersApi
 	draftsApi                    = api.ApiGroupApp.SystemApiGroup.TeamDraftsApi
+	teamchalibotsApi             = api.ApiGroupApp.SystemApiGroup.TeamChaliBotsApi
+	TeamChalibotCommandsApi      = api.ApiGroupApp.SystemApiGroup.TeamChaliBotCommandsApi
 )

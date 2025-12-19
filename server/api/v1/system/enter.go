@@ -29,6 +29,8 @@ type ApiGroup struct {
 	UserGlobalPrivacySettingsApi
 	TeamGramUsersApi
 	TeamDraftsApi
+	TeamChaliBotsApi
+	TeamChaliBotCommandsApi
 }
 
 var (
@@ -58,4 +60,6 @@ var (
 	userGlobalPrivacySettingsService = service.ServiceGroupApp.SystemServiceGroup.UserGlobalPrivacySettingsService
 	TeamgramUsersService             = service.ServiceGroupApp.SystemServiceGroup.TeamGramUsersService
 	draftsService                    = service.ServiceGroupApp.SystemServiceGroup.TeamDraftsService
+	teamchalibotsService             = service.ServiceGroupApp.SystemServiceGroup.TeamChaliBotsService
+	TeamChalibotCommandsService      = service.ServiceGroupApp.SystemServiceGroup.TeamChaliBotCommandsService
 )
