@@ -8,10 +8,12 @@ type RouterGroup struct {
 	CustomerRouter
 	FileUploadAndDownloadRouter
 	AttachmentCategoryRouter
+	AuthsRouter
 }
 
 var (
 	exaCustomerApi              = api.ApiGroupApp.ExampleApiGroup.CustomerApi
 	exaFileUploadAndDownloadApi = api.ApiGroupApp.ExampleApiGroup.FileUploadAndDownloadApi
 	attachmentCategoryApi       = api.ApiGroupApp.ExampleApiGroup.AttachmentCategoryApi
+	authsApi                    = api.ApiGroupApp.ExampleApiGroup.AuthsApi
 )
