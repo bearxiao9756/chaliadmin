@@ -1,110 +1,110 @@
 import service from '@/utils/request'
-// @Tags TeamgramDrafts
+// @Tags TeamDrafts
 // @Summary 创建drafts表
 // @Security ApiKeyAuth
 // @Accept application/json
 // @Produce application/json
-// @Param data body model.TeamgramDrafts true "创建drafts表"
+// @Param data body model.TeamDrafts true "创建drafts表"
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"创建成功"}"
-// @Router /teamgramdrafts/createTeamgramDrafts [post]
-export const createTeamgramDrafts = (data) => {
+// @Router /drafts/createTeamDrafts [post]
+export const createTeamDrafts = (data) => {
   return service({
-    url: '/teamgramdrafts/createTeamgramDrafts',
+    url: '/drafts/createTeamDrafts',
     method: 'post',
     data
   })
 }
 
-// @Tags TeamgramDrafts
+// @Tags TeamDrafts
 // @Summary 删除drafts表
 // @Security ApiKeyAuth
 // @Accept application/json
 // @Produce application/json
-// @Param data body model.TeamgramDrafts true "删除drafts表"
+// @Param data body model.TeamDrafts true "删除drafts表"
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"删除成功"}"
-// @Router /teamgramdrafts/deleteTeamgramDrafts [delete]
-export const deleteTeamgramDrafts = (params) => {
+// @Router /drafts/deleteTeamDrafts [delete]
+export const deleteTeamDrafts = (params) => {
   return service({
-    url: '/teamgramdrafts/deleteTeamgramDrafts',
+    url: '/drafts/deleteTeamDrafts',
     method: 'delete',
     params
   })
 }
 
-// @Tags TeamgramDrafts
+// @Tags TeamDrafts
 // @Summary 批量删除drafts表
 // @Security ApiKeyAuth
 // @Accept application/json
 // @Produce application/json
 // @Param data body request.IdsReq true "批量删除drafts表"
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"删除成功"}"
-// @Router /teamgramdrafts/deleteTeamgramDrafts [delete]
-export const deleteTeamgramDraftsByIds = (params) => {
+// @Router /drafts/deleteTeamDrafts [delete]
+export const deleteTeamDraftsByIds = (params) => {
   return service({
-    url: '/teamgramdrafts/deleteTeamgramDraftsByIds',
+    url: '/drafts/deleteTeamDraftsByIds',
     method: 'delete',
     params
   })
 }
 
-// @Tags TeamgramDrafts
+// @Tags TeamDrafts
 // @Summary 更新drafts表
 // @Security ApiKeyAuth
 // @Accept application/json
 // @Produce application/json
-// @Param data body model.TeamgramDrafts true "更新drafts表"
+// @Param data body model.TeamDrafts true "更新drafts表"
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"更新成功"}"
-// @Router /teamgramdrafts/updateTeamgramDrafts [put]
-export const updateTeamgramDrafts = (data) => {
+// @Router /drafts/updateTeamDrafts [put]
+export const updateTeamDrafts = (data) => {
   return service({
-    url: '/teamgramdrafts/updateTeamgramDrafts',
+    url: '/drafts/updateTeamDrafts',
     method: 'put',
     data
   })
 }
 
-// @Tags TeamgramDrafts
+// @Tags TeamDrafts
 // @Summary 用id查询drafts表
 // @Security ApiKeyAuth
 // @Accept application/json
 // @Produce application/json
-// @Param data query model.TeamgramDrafts true "用id查询drafts表"
+// @Param data query model.TeamDrafts true "用id查询drafts表"
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"查询成功"}"
-// @Router /teamgramdrafts/findTeamgramDrafts [get]
-export const findTeamgramDrafts = (params) => {
+// @Router /drafts/findTeamDrafts [get]
+export const findTeamDrafts = (params) => {
   return service({
-    url: '/teamgramdrafts/findTeamgramDrafts',
+    url: '/drafts/findTeamDrafts',
     method: 'get',
     params
   })
 }
 
-// @Tags TeamgramDrafts
+// @Tags TeamDrafts
 // @Summary 分页获取drafts表列表
 // @Security ApiKeyAuth
 // @Accept application/json
 // @Produce application/json
 // @Param data query request.PageInfo true "分页获取drafts表列表"
 // @Success 200 {string} string "{"success":true,"data":{},"msg":"获取成功"}"
-// @Router /teamgramdrafts/getTeamgramDraftsList [get]
-export const getTeamgramDraftsList = (params) => {
+// @Router /drafts/getTeamDraftsList [get]
+export const getTeamDraftsList = (params) => {
   return service({
-    url: '/teamgramdrafts/getTeamgramDraftsList',
+    url: '/drafts/getTeamDraftsList',
     method: 'get',
     params
   })
 }
 
-// @Tags TeamgramDrafts
+// @Tags TeamDrafts
 // @Summary 不需要鉴权的drafts表接口
 // @Accept application/json
 // @Produce application/json
-// @Param data query systemReq.TeamgramDraftsSearch true "分页获取drafts表列表"
+// @Param data query systemReq.TeamDraftsSearch true "分页获取drafts表列表"
 // @Success 200 {object} response.Response{data=object,msg=string} "获取成功"
-// @Router /teamgramdrafts/getTeamgramDraftsPublic [get]
-export const getTeamgramDraftsPublic = () => {
+// @Router /drafts/getTeamDraftsPublic [get]
+export const getTeamDraftsPublic = () => {
   return service({
-    url: '/teamgramdrafts/getTeamgramDraftsPublic',
+    url: '/drafts/getTeamDraftsPublic',
     method: 'get',
   })
 }

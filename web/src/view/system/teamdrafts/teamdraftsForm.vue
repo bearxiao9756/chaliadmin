@@ -6,8 +6,8 @@
         <el-form-item label="编号:" prop="id">
     <el-input v-model.number="formData.id" :clearable="true" placeholder="请输入编号" />
 </el-form-item>
-        <el-form-item label="用户身份:" prop="userId">
-    <el-input v-model.number="formData.userId" :clearable="true" placeholder="请输入用户身份" />
+        <el-form-item label="用户ID:" prop="userId">
+    <el-input v-model.number="formData.userId" :clearable="true" placeholder="请输入用户ID" />
 </el-form-item>
         <el-form-item label="会话ID:" prop="peerDialogId">
     <el-input v-model.number="formData.peerDialogId" :clearable="true" placeholder="请输入会话ID" />
@@ -16,8 +16,7 @@
     <el-input v-model.number="formData.draftType" :clearable="true" placeholder="请输入草稿类型" />
 </el-form-item>
         <el-form-item label="草稿消息数据:" prop="draftMessageData">
-    // 此字段为json结构，可以前端自行控制展示和数据绑定模式 需绑定json的key为 formData.draftMessageData 后端会按照json的类型进行存取
-    {{ formData.draftMessageData }}
+    <SelectFile v-model="formData.draftMessageData" />
 </el-form-item>
         <el-form-item label="date2字段:" prop="date2">
     <el-input v-model.number="formData.date2" :clearable="true" placeholder="请输入date2字段" />
@@ -39,13 +38,13 @@
 
 <script setup>
 import {
-  createTeamgramDrafts,
-  updateTeamgramDrafts,
-  findTeamgramDrafts
-} from '@/api/system/teamgramdrafts'
+  createTeamDrafts,
+  updateTeamDrafts,
+  findTeamDrafts
+} from '@/api/system/teamdrafts'
 
 defineOptions({
-    name: 'TeamgramDraftsForm'
+    name: 'TeamDraftsForm'
 })
 
 // 自动获取字典
@@ -53,6 +52,8 @@ import { getDictFunc } from '@/utils/format'
 import { useRoute, useRouter } from "vue-router"
 import { ElMessage } from 'element-plus'
 import { ref, reactive } from 'vue'
+// 文件选择组件
+import SelectFile from '@/components/selectFile/selectFile.vue'
 
 
 const route = useRoute()
@@ -67,7 +68,7 @@ const formData = ref({
             userId: undefined,
             peerDialogId: undefined,
             draftType: undefined,
-            draftMessageData: {},
+            draftMessageData: [],
             date2: undefined,
             createdAt: new Date(),
             updatedAt: new Date(),
@@ -82,7 +83,7 @@ const elFormRef = ref()
 const init = async () => {
  // 建议通过url传参获取目标数据ID 调用 find方法进行查询数据操作 从而决定本页面是create还是update 以下为id作为url参数示例
     if (route.query.id) {
-      const res = await findTeamgramDrafts({ ID: route.query.id })
+      const res = await findTeamDrafts({ ID: route.query.id })
       if (res.code === 0) {
         formData.value = res.data
         type.value = 'update'
@@ -101,13 +102,13 @@ const save = async() => {
             let res
            switch (type.value) {
              case 'create':
-               res = await createTeamgramDrafts(formData.value)
+               res = await createTeamDrafts(formData.value)
                break
              case 'update':
-               res = await updateTeamgramDrafts(formData.value)
+               res = await updateTeamDrafts(formData.value)
                break
              default:
-               res = await createTeamgramDrafts(formData.value)
+               res = await createTeamDrafts(formData.value)
                break
            }
            btnLoading.value = false

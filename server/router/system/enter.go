@@ -25,7 +25,7 @@ type RouterGroup struct {
 	MessagesRouter
 	UserGlobalPrivacySettingsRouter
 	TeamGramUsersRouter
-	TeamgramDraftsRouter
+	TeamDraftsRouter
 }
 
 var (
@@ -54,5 +54,5 @@ var (
 	messagesApi                  = api.ApiGroupApp.SystemApiGroup.MessagesApi
 	userGlobalPrivacySettingsApi = api.ApiGroupApp.SystemApiGroup.UserGlobalPrivacySettingsApi
 	TeamgramUsersApi             = api.ApiGroupApp.SystemApiGroup.TeamGramUsersApi
-	teamgramdraftsApi            = api.ApiGroupApp.SystemApiGroup.TeamgramDraftsApi
+	draftsApi                    = api.ApiGroupApp.SystemApiGroup.TeamDraftsApi
 )

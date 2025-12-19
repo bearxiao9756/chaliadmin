@@ -3,16 +3,8 @@
   <div>
     <div class="gva-search-box">
       <el-form ref="elSearchFormRef" :inline="true" :model="searchInfo" class="demo-form-inline" @keyup.enter="onSubmit">
-            <el-form-item label="编号" prop="id">
-  <el-input v-model.number="searchInfo.id" placeholder="搜索条件" />
-</el-form-item>
-            
-            <el-form-item label="用户身份" prop="userId">
+            <el-form-item label="用户ID" prop="userId">
   <el-input v-model.number="searchInfo.userId" placeholder="搜索条件" />
-</el-form-item>
-            
-            <el-form-item label="会话ID" prop="peerDialogId">
-  <el-input v-model.number="searchInfo.peerDialogId" placeholder="搜索条件" />
 </el-form-item>
             
             <el-form-item label="草稿类型" prop="draftType">
@@ -21,10 +13,6 @@
             
             <el-form-item label="草稿消息数据" prop="draftMessageData">
   <el-input v-model="searchInfo.draftMessageData" placeholder="搜索条件" />
-</el-form-item>
-            
-            <el-form-item label="date2字段" prop="date2">
-  <el-input v-model.number="searchInfo.date2" placeholder="搜索条件" />
 </el-form-item>
             
             <el-form-item label="创建时间" prop="createdAt">
@@ -80,7 +68,7 @@
         
             <el-table-column align="left" label="编号" prop="id" width="120" />
 
-            <el-table-column align="left" label="用户身份" prop="userId" width="120" />
+            <el-table-column align="left" label="用户ID" prop="userId" width="120" />
 
             <el-table-column align="left" label="会话ID" prop="peerDialogId" width="120" />
 
@@ -88,7 +76,9 @@
 
             <el-table-column label="草稿消息数据" prop="draftMessageData" width="200">
     <template #default="scope">
-        [JSON]
+         <div class="file-list">
+           <el-tag v-for="file in scope.row.draftMessageData" :key="file.uid" @click="onDownloadFile(file.url)">{{ file.name }}</el-tag>
+         </div>
     </template>
 </el-table-column>
             <el-table-column align="left" label="date2字段" prop="date2" width="120" />
@@ -102,7 +92,7 @@
         <el-table-column align="left" label="操作" fixed="right" :min-width="appStore.operateMinWith">
             <template #default="scope">
             <el-button  type="primary" link class="table-button" @click="getDetails(scope.row)"><el-icon style="margin-right: 5px"><InfoFilled /></el-icon>查看</el-button>
-            <el-button  type="primary" link icon="edit" class="table-button" @click="updateTeamgramDraftsFunc(scope.row)">编辑</el-button>
+            <el-button  type="primary" link icon="edit" class="table-button" @click="updateTeamDraftsFunc(scope.row)">编辑</el-button>
             <el-button   type="primary" link icon="delete" @click="deleteRow(scope.row)">删除</el-button>
             </template>
         </el-table-column>
@@ -134,8 +124,8 @@
             <el-form-item label="编号:" prop="id">
     <el-input v-model.number="formData.id" :clearable="true" placeholder="请输入编号" />
 </el-form-item>
-            <el-form-item label="用户身份:" prop="userId">
-    <el-input v-model.number="formData.userId" :clearable="true" placeholder="请输入用户身份" />
+            <el-form-item label="用户ID:" prop="userId">
+    <el-input v-model.number="formData.userId" :clearable="true" placeholder="请输入用户ID" />
 </el-form-item>
             <el-form-item label="会话ID:" prop="peerDialogId">
     <el-input v-model.number="formData.peerDialogId" :clearable="true" placeholder="请输入会话ID" />
@@ -144,8 +134,7 @@
     <el-input v-model.number="formData.draftType" :clearable="true" placeholder="请输入草稿类型" />
 </el-form-item>
             <el-form-item label="草稿消息数据:" prop="draftMessageData">
-    // 此字段为json结构，可以前端自行控制展示和数据绑定模式 需绑定json的key为 formData.draftMessageData 后端会按照json的类型进行存取
-    {{ formData.draftMessageData }}
+    <SelectFile v-model="formData.draftMessageData" />
 </el-form-item>
             <el-form-item label="date2字段:" prop="date2">
     <el-input v-model.number="formData.date2" :clearable="true" placeholder="请输入date2字段" />
@@ -164,7 +153,7 @@
                     <el-descriptions-item label="编号">
     {{ detailForm.id }}
 </el-descriptions-item>
-                    <el-descriptions-item label="用户身份">
+                    <el-descriptions-item label="用户ID">
     {{ detailForm.userId }}
 </el-descriptions-item>
                     <el-descriptions-item label="会话ID">
@@ -174,7 +163,12 @@
     {{ detailForm.draftType }}
 </el-descriptions-item>
                     <el-descriptions-item label="草稿消息数据">
-    {{ detailForm.draftMessageData }}
+    <div class="fileBtn" v-for="(item,index) in detailForm.draftMessageData" :key="index">
+        <el-button type="primary" text bg @click="onDownloadFile(item.url)">
+          <el-icon style="margin-right: 5px"><Download /></el-icon>
+          {{ item.name }}
+        </el-button>
+    </div>
 </el-descriptions-item>
                     <el-descriptions-item label="date2字段">
     {{ detailForm.date2 }}
@@ -193,13 +187,16 @@
 
 <script setup>
 import {
-  createTeamgramDrafts,
-  deleteTeamgramDrafts,
-  deleteTeamgramDraftsByIds,
-  updateTeamgramDrafts,
-  findTeamgramDrafts,
-  getTeamgramDraftsList
-} from '@/api/system/teamgramdrafts'
+  createTeamDrafts,
+  deleteTeamDrafts,
+  deleteTeamDraftsByIds,
+  updateTeamDrafts,
+  findTeamDrafts,
+  getTeamDraftsList
+} from '@/api/system/teamdrafts'
+import { getUrl } from '@/utils/image'
+// 文件选择组件
+import SelectFile from '@/components/selectFile/selectFile.vue'
 
 // 全量引入格式化工具 请按需保留
 import { getDictFunc, formatDate, formatBoolean, filterDict ,filterDataSource, returnArrImg, onDownloadFile } from '@/utils/format'
@@ -211,7 +208,7 @@ import { useAppStore } from "@/pinia"
 
 
 defineOptions({
-    name: 'TeamgramDrafts'
+    name: 'TeamDrafts'
 })
 
 // 提交按钮loading
@@ -227,7 +224,7 @@ const formData = ref({
             userId: undefined,
             peerDialogId: undefined,
             draftType: undefined,
-            draftMessageData: {},
+            draftMessageData: [],
             date2: undefined,
             createdAt: new Date(),
             updatedAt: new Date(),
@@ -277,7 +274,7 @@ const handleCurrentChange = (val) => {
 
 // 查询
 const getTableData = async() => {
-  const table = await getTeamgramDraftsList({ page: page.value, pageSize: pageSize.value, ...searchInfo.value })
+  const table = await getTeamDraftsList({ page: page.value, pageSize: pageSize.value, ...searchInfo.value })
   if (table.code === 0) {
     tableData.value = table.data.list
     total.value = table.data.total
@@ -312,7 +309,7 @@ const deleteRow = (row) => {
         cancelButtonText: '取消',
         type: 'warning'
     }).then(() => {
-            deleteTeamgramDraftsFunc(row)
+            deleteTeamDraftsFunc(row)
         })
     }
 
@@ -335,7 +332,7 @@ const onDelete = async() => {
         multipleSelection.value.map(item => {
           ids.push(item.id)
         })
-      const res = await deleteTeamgramDraftsByIds({ ids })
+      const res = await deleteTeamDraftsByIds({ ids })
       if (res.code === 0) {
         ElMessage({
           type: 'success',
@@ -353,8 +350,8 @@ const onDelete = async() => {
 const type = ref('')
 
 // 更新行
-const updateTeamgramDraftsFunc = async(row) => {
-    const res = await findTeamgramDrafts({ id: row.id })
+const updateTeamDraftsFunc = async(row) => {
+    const res = await findTeamDrafts({ id: row.id })
     type.value = 'update'
     if (res.code === 0) {
         formData.value = res.data
@@ -364,8 +361,8 @@ const updateTeamgramDraftsFunc = async(row) => {
 
 
 // 删除行
-const deleteTeamgramDraftsFunc = async (row) => {
-    const res = await deleteTeamgramDrafts({ id: row.id })
+const deleteTeamDraftsFunc = async (row) => {
+    const res = await deleteTeamDrafts({ id: row.id })
     if (res.code === 0) {
         ElMessage({
                 type: 'success',
@@ -395,7 +392,7 @@ const closeDialog = () => {
         userId: undefined,
         peerDialogId: undefined,
         draftType: undefined,
-        draftMessageData: {},
+        draftMessageData: [],
         date2: undefined,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -409,13 +406,13 @@ const enterDialog = async () => {
               let res
               switch (type.value) {
                 case 'create':
-                  res = await createTeamgramDrafts(formData.value)
+                  res = await createTeamDrafts(formData.value)
                   break
                 case 'update':
-                  res = await updateTeamgramDrafts(formData.value)
+                  res = await updateTeamDrafts(formData.value)
                   break
                 default:
-                  res = await createTeamgramDrafts(formData.value)
+                  res = await createTeamDrafts(formData.value)
                   break
               }
               btnLoading.value = false
@@ -445,7 +442,7 @@ const openDetailShow = () => {
 // 打开详情
 const getDetails = async (row) => {
   // 打开弹窗
-  const res = await findTeamgramDrafts({ id: row.id })
+  const res = await findTeamDrafts({ id: row.id })
   if (res.code === 0) {
     detailForm.value = res.data
     openDetailShow()
@@ -463,5 +460,19 @@ const closeDetailShow = () => {
 </script>
 
 <style>
+
+.file-list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.fileBtn{
+  margin-bottom: 10px;
+}
+
+.fileBtn:last-child{
+  margin-bottom: 0;
+}
 
 </style>
