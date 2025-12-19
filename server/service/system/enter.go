@@ -25,4 +25,5 @@ type ServiceGroup struct {
 	SysErrorService
 	UsersService
 	MessagesService
+	UserGlobalPrivacySettingsService
 }
